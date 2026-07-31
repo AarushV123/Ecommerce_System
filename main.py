@@ -7,5 +7,6 @@ def main():
     print("Welcome to the E-Commerce Sales & Analytics System")
     print("\nProject setup completed successfully!")
 
+    
 if __name__ == "__main__":
     main()
