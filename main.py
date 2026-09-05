@@ -1,6 +1,7 @@
 from config import PROJECT_NAME
 from customers.customer_manager import Customer_manager
 from products.product_manager import ProductManager
+from orders.order_manager import OrderManager
 
 
 def product_menu(product_manager):
@@ -61,9 +62,39 @@ def customer_menu(customer_manager):
             print("Invalid Choice")
 
 
+def order_menu(order_manager):
+    while True:
+        print("\n" + "=" * 50)
+        print("ORDER MANAGEMENT")
+        print("=" * 50)
+        print("1. Add Order")
+        print("2. View Orders")
+        print("3. Search Order")
+        print("4. Update Order")
+        print("5. Delete Order")
+        print("6. Back to Main Menu")
+        choice = input("Enter Choice : ")
+
+        if choice == "1":
+            order_manager.add_order()
+        elif choice == "2":
+            order_manager.view_orders()
+        elif choice == "3":
+            order_manager.search_order()
+        elif choice == "4":
+            order_manager.update_order()
+        elif choice == "5":
+            order_manager.delete_order()
+        elif choice == "6":
+            break
+        else:
+            print("Invalid Choice")
+
+
 def main():
     product_manager = ProductManager()
     customer_manager = Customer_manager()
+    order_manager = OrderManager()
 
     while True:
         print("\n" + "=" * 50)
@@ -71,7 +102,8 @@ def main():
         print("=" * 50)
         print("1. Product Management")
         print("2. Customer Management")
-        print("3. Exit")
+        print("3. Order Management")
+        print("4. Exit")
         choice = input("Enter Choice : ")
 
         if choice == "1":
@@ -79,6 +111,8 @@ def main():
         elif choice == "2":
             customer_menu(customer_manager)
         elif choice == "3":
+            order_menu(order_manager)
+        elif choice == "4":
             print("Thank You")
             break
         else:

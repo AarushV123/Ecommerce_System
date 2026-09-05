@@ -1,1 +1,2 @@
-OrderID,CustomerID,OrderDate,TotalAmount
+OrderID,Customer ID,product ID,Amount,Quantity,Order Date
+
