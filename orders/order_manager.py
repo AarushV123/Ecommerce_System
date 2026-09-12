@@ -1,10 +1,13 @@
 import csv
-
 from config import ORDER_FILE
 from orders.order import Order
+from sales.sales_manager import SalesManager
 
 
 class OrderManager:
+    def __init__(self):
+        self.sales_manager = SalesManager()
+
     def load_orders(self):
         orders = []
         try:
@@ -12,12 +15,12 @@ class OrderManager:
                 reader = csv.DictReader(file)
                 for row in reader:
                     order = Order(
-                        row["OrderID"],
-                        row["Customer ID"],
-                        row["product ID"],
-                        row["Quantity"],
-                        row["Order Date"],
-                        row["Amount"],
+                        row.get("OrderID"),
+                        row.get("CustomerID") or row.get("Customer ID"),
+                        row.get("productID") or row.get("product ID"),
+                        row.get("Quantity"),
+                        row.get("Order Date") or row.get("SaleDate"),
+                        row.get("TotalAmount") or row.get("Amount"),
                     )
                     orders.append(order)
         except FileNotFoundError:
@@ -28,11 +31,11 @@ class OrderManager:
         with open(ORDER_FILE, "w", newline="", encoding="utf-8") as file:
             fieldnames = [
                 "OrderID",
-                "Customer ID",
-                "product ID",
-                "Amount",
+                "CustomerID",
+                "productID",
                 "Quantity",
                 "Order Date",
+                "TotalAmount",
             ]
             writer = csv.DictWriter(file, fieldnames=fieldnames)
             writer.writeheader()
@@ -41,52 +44,56 @@ class OrderManager:
 
     def add_order(self):
         orders = self.load_orders()
-        order_id = input("Enter order_id: ")
+        order_id = input("Enter order_id: ").strip()
         for o in orders:
-            if o.order_id == order_id:
+            if getattr(o, "order_id", None) == order_id or getattr(o, "OrderID", None) == order_id:
                 print("Order ID already exists.")
                 return
 
-        customer_id = input("Enter customer_id : ")
-        product_id = input("Enter product_id : ")
-        quantity = input("Enter quantity: ")
-        order_date = input("Enter order_date: ")
-        total_amount = input("Enter total_amount: ")
+        customer_id = input("Enter customer_id : ").strip()
+        product_id = input("Enter product_id : ").strip()
+        quantity = input("Enter quantity: ").strip()
+        order_date = input("Enter order_date: ").strip()
+        total_amount = input("Enter total_amount: ").strip()
 
         new_order = Order(
             order_id, customer_id, product_id, quantity, order_date, total_amount
         )
         orders.append(new_order)
         self.save_orders(orders)
-        print("Order Added Successfully.")
+        
+        self.sales_manager.record_sale(new_order)
+        print("Order Added and Sale Recorded Successfully.")
 
     def view_orders(self):
         orders = self.load_orders()
-        if len(orders) == 0:
-            print("There are no orders found")
+        if not orders:
+            print("There are no orders found.")
         else:
             for order in orders:
                 order.display()
 
     def search_order(self):
-        search_id = input("Enter Order ID : ")
+        search_id = input("Enter Order ID : ").strip()
         orders = self.load_orders()
         for item in orders:
-            if item.order_id == search_id:
+            order_id = getattr(item, "order_id", getattr(item, "OrderID", None))
+            if order_id == search_id:
                 item.display()
                 return
         print("Order Not Found")
 
     def update_order(self):
         orders = self.load_orders()
-        user_input = input("What order would you like to update : ")
+        user_input = input("What order would you like to update : ").strip()
         for o in orders:
-            if o.order_id == user_input:
-                o.customer_id = input("Enter customer_id : ")
-                o.product_id = input("Enter product_id : ")
-                o.quantity = input("Enter quantity: ")
-                o.order_date = input("Enter order_date: ")
-                o.total_amount = input("Enter total_amount: ")
+            order_id = getattr(o, "order_id", getattr(o, "OrderID", None))
+            if order_id == user_input:
+                o.customer_id = input("Enter customer_id : ").strip()
+                o.product_id = input("Enter product_id : ").strip()
+                o.quantity = input("Enter quantity: ").strip()
+                o.order_date = input("Enter order_date: ").strip()
+                o.total_amount = input("Enter total_amount: ").strip()
                 self.save_orders(orders)
                 print("Order Updated Successfully.")
                 return
@@ -95,9 +102,10 @@ class OrderManager:
 
     def delete_order(self):
         orders = self.load_orders()
-        user_input = input("What order would you like to remove: ")
+        user_input = input("What order would you like to remove: ").strip()
         for o in orders:
-            if o.order_id == user_input:
+            order_id = getattr(o, "order_id", getattr(o, "OrderID", None))
+            if order_id == user_input:
                 orders.remove(o)
                 self.save_orders(orders)
                 print("Order Removed")

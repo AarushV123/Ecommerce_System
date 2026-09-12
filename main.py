@@ -2,6 +2,7 @@ from config import PROJECT_NAME
 from customers.customer_manager import Customer_manager
 from products.product_manager import ProductManager
 from orders.order_manager import OrderManager
+from sales.sales_manager import SalesManager
 
 
 def product_menu(product_manager):
@@ -91,10 +92,34 @@ def order_menu(order_manager):
             print("Invalid Choice")
 
 
+def sales_menu(sales_manager):
+    while True:
+        print("\n" + "=" * 50)
+        print("SALES MANAGEMENT")
+        print("=" * 50)
+        print("1. View Sales")
+        print("2. Search Sale")
+        print("3. Calculate Total Sales")
+        print("4. Back to Main Menu")
+        choice = input("Enter Choice : ")
+
+        if choice == "1":
+            sales_manager.view_sales()
+        elif choice == "2":
+            sales_manager.search_sale()
+        elif choice == "3":
+            sales_manager.calculate_total_sales()
+        elif choice == "4":
+            break
+        else:
+            print("Invalid Choice")
+
+
 def main():
     product_manager = ProductManager()
     customer_manager = Customer_manager()
     order_manager = OrderManager()
+    sales_manager = SalesManager()
 
     while True:
         print("\n" + "=" * 50)
@@ -103,7 +128,8 @@ def main():
         print("1. Product Management")
         print("2. Customer Management")
         print("3. Order Management")
-        print("4. Exit")
+        print("4. Sales Management")
+        print("5. Exit")
         choice = input("Enter Choice : ")
 
         if choice == "1":
@@ -113,10 +139,13 @@ def main():
         elif choice == "3":
             order_menu(order_manager)
         elif choice == "4":
+            sales_menu(sales_manager)
+        elif choice == "5":
             print("Thank You")
             break
         else:
             print("Invalid Choice")
+        
 
 
 if __name__ == "__main__":

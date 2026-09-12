@@ -1,4 +1,4 @@
-OrderID,CustomerID,productID,Quantity,Order Date,TotalAmount
+OrderID,CustomerID,productID,Quantity,SaleDate,TotalAmount
 1,97,72,2,2025-05-17,152
 2,87,55,3,2025-12-25,1005
 3,68,99,1,2025-11-01,295
