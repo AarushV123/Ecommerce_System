@@ -11,12 +11,12 @@ class SalesManager:
             sale = {
                 "OrderID": order.order_id,
                 "CustomerID": order.customer_id,
-                "productID": order.product_id,  # Lowercase 'p' matches save_sales fieldnames
+                "productID": order.product_id,  
                 "Quantity": order.quantity,
                 "SaleDate": order.order_date,
                 "TotalAmount": order.total_amount,
             }
-            sales.append(sale)
+            sales.append(sale) 
 
         self.save_sales(sales)
         print("Existing orders added to sales successfully.")

@@ -102,7 +102,7 @@ def sales_menu(sales_manager):
         print("3. Calculate Total Sales")
         print("4. Back to Main Menu")
         choice = input("Enter Choice : ")
-
+ 
         if choice == "1":
             sales_manager.view_sales()
         elif choice == "2":
