@@ -3,7 +3,6 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 from analytics import inventory_analytics as inv
-
 # -------------------------------------------------
 # PAGE CONFIGURATION
 # -------------------------------------------------

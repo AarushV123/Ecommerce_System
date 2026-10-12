@@ -1,17 +1,20 @@
 import pandas as pd
 
-def get_current_stock(products):
-    return products
+def get_current_stock(products_df):
+    return products_df
 
-def get_low_stock(products, threshold=5):
-    return [p for p in products if p['stock'] <= threshold]
+def get_low_stock(products_df, threshold=5):
+    return products_df[products_df['Stock'] <= threshold]
 
-def get_out_of_stock(products):
-    return [p for p in products if p['stock'] == 0]
+def get_out_of_stock(products_df):
+    return products_df[products_df['Stock'] == 0]
 
-def get_stock_value(products):
-    total = sum(p['stock'] * p['price'] for p in products)
-    return total
+def get_stock_value(products_df):
+    # Calculates total stock value using Stock and Price columns
+    return (products_df['Stock'] * products_df['Price']).sum()
 
-def get_dead_stock(products, sales):
-    return [p for p in products if p['stock'] >= 10 and sales.get(p['id'], 0) == 0]
+def get_dead_stock(products_df, sales_df, high_stock=10):
+    product_sales = sales_df.groupby('ProductID')['Quantity'].sum().reset_index()
+    merged = products_df.merge(product_sales, on='ProductID', how='left').fillna({'Quantity': 0})
+    
+    return merged[(merged['Stock'] >= high_stock) & (merged['Quantity'] == 0)]
