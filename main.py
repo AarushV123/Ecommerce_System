@@ -2,8 +2,8 @@ from config import PROJECT_NAME
 from customers.customer_manager import Customer_manager
 from products.product_manager import ProductManager
 from orders.order_manager import OrderManager
-from sales.sales_manager import SalesManager
-
+from sales.sales_manager import SalesManager 
+import analytics.sales_analytics as analytics
 
 def product_menu(product_manager):
     while True:
@@ -115,6 +115,48 @@ def sales_menu(sales_manager):
             print("Invalid Choice")
 
 
+def sales_analytics():
+    loaded_sales_data = None
+    while True:
+        print("\n" + "=" * 50)
+        print("SALES ANALYTICS")
+        print("=" * 50)
+        print("1. Load Scores Data")
+        print("2. Analyze Sales")
+        print("3. Monthly Sales")
+        print("4. Best Selling Product")
+        print("5. Customer Spending")
+        print("6. Productwise Revenue")
+        print("7. Category Wise Sales")
+        print("8. Back to Main Menu")
+
+        choice = input("Enter Choice : ")
+ 
+        if choice == "1":
+            loaded_sales_data = analytics.load_scores_data()
+        elif choice in ["2", "3", "4", "5", "6", "7"]:
+            if loaded_sales_data is None:
+                print("Please choose Option 1 to Load Data first!")
+                continue
+                
+            if choice == "2":
+                analytics.analyze_sales(loaded_sales_data)
+            elif choice == "3":
+                analytics.monthly_sales(loaded_sales_data)
+            elif choice == "4":
+                analytics.best_selling_product(loaded_sales_data)
+            elif choice == "5":
+                analytics.costumer_spending(loaded_sales_data)
+            elif choice == "6":
+                analytics.productwise_revenue(loaded_sales_data)
+            elif choice == "7":
+                analytics.category_wise_sales(loaded_sales_data)
+        elif choice == "8":
+            break
+        else:
+            print("Invalid Choice")
+
+
 def main():
     product_manager = ProductManager()
     customer_manager = Customer_manager()
@@ -129,7 +171,8 @@ def main():
         print("2. Customer Management")
         print("3. Order Management")
         print("4. Sales Management")
-        print("5. Exit")
+        print("5. Sales Analytics")
+        print("6. Exit")
         choice = input("Enter Choice : ")
 
         if choice == "1":
@@ -141,11 +184,12 @@ def main():
         elif choice == "4":
             sales_menu(sales_manager)
         elif choice == "5":
+            sales_analytics()
+        elif choice == "6":
             print("Thank You")
             break
         else:
             print("Invalid Choice")
-        
 
 
 if __name__ == "__main__":
