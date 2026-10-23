@@ -3,6 +3,9 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 from analytics import inventory_analytics as inv
+from orders.invoice import Invoice
+from orders.order import Order
+
 # -------------------------------------------------
 # PAGE CONFIGURATION
 # -------------------------------------------------
@@ -54,6 +57,12 @@ selected_category = st.sidebar.multiselect(
     "Select Category", categories, default=list(categories)
 )
 
+# -------------------------------------------------
+# INVOICE GENERATOR SIDEBAR SECTION
+# -------------------------------------------------
+st.sidebar.markdown("---")
+st.sidebar.header("🧾 Invoice Generator")
+
 
 # -------------------------------------------------
 # MERGE SALES WITH PRODUCTS
@@ -71,6 +80,29 @@ sales_data = sales.merge(
 # -------------------------------------------------
 
 filtered_sales = sales_data[sales_data["Category"].isin(selected_category)]
+
+# Populate invoice dropdown based on currently filtered sales
+available_order_ids = filtered_sales["OrderID"].unique()
+if len(available_order_ids) > 0:
+    selected_order_id = st.sidebar.selectbox("Select Order ID", available_order_ids)
+    
+    if st.sidebar.button("Generate Invoice"):
+        order_row = filtered_sales[filtered_sales["OrderID"] == selected_order_id].iloc[0]
+        
+        order_obj = Order(
+            order_id=order_row["OrderID"],
+            customer_id=order_row["CustomerID"],
+            product_id=order_row["ProductID"],
+            quantity=order_row["Quantity"],
+            order_date=order_row["SaleDate"],
+            total_amount=order_row["TotalAmount"]
+        )
+        
+        invoice = Invoice(order_obj)
+        invoice.generate_invoice()
+        st.sidebar.success(f"Invoice for Order {selected_order_id} saved successfully!")
+else:
+    st.sidebar.warning("No orders available for the selected filters.")
 
 
 # -------------------------------------------------
