@@ -1,0 +1,126 @@
+Date,Description,Category,Amount,Type
+2025-01-03,Order #92 Sale,Sales Revenue,281,Income
+2025-01-05,Order #10 Sale,Sales Revenue,1080,Income
+2025-01-05,Order #12 Sale,Sales Revenue,1460,Income
+2025-01-05,Order #19 Sale,Sales Revenue,667,Income
+2025-01-05,Order #72 Sale,Sales Revenue,891,Income
+2025-01-08,Order #95 Sale,Sales Revenue,1026,Income
+2025-01-13,Order #63 Sale,Sales Revenue,519,Income
+2025-01-19,Order #89 Sale,Sales Revenue,168,Income
+2025-01-25,Order #67 Sale,Sales Revenue,1405,Income
+2025-01-26,Order #86 Sale,Sales Revenue,1225,Income
+2025-02-02,Monthly Shipping & Logistics Expense,Shipping & Logistics,769.88,Expense
+2025-02-05,Order #33 Sale,Sales Revenue,934,Income
+2025-02-05,Monthly Marketing Expense,Marketing,714.89,Expense
+2025-02-06,Order #85 Sale,Sales Revenue,934,Income
+2025-02-06,Monthly Software Subscription Expense,Software Subscription,404.09,Expense
+2025-02-09,Order #18 Sale,Sales Revenue,1520,Income
+2025-02-10,Order #41 Sale,Sales Revenue,370,Income
+2025-02-12,Order #93 Sale,Sales Revenue,4010,Income
+2025-02-14,Order #44 Sale,Sales Revenue,2712,Income
+2025-02-14,Order #100 Sale,Sales Revenue,2664,Income
+2025-02-24,Order #24 Sale,Sales Revenue,519,Income
+2025-02-25,Order #66 Sale,Sales Revenue,2252,Income
+2025-02-26,Order #20 Sale,Sales Revenue,2924,Income
+2025-03-04,Order #48 Sale,Sales Revenue,2830,Income
+2025-03-05,Order #68 Sale,Sales Revenue,2802,Income
+2025-03-06,Monthly Marketing Expense,Marketing,351.87,Expense
+2025-03-08,Order #88 Sale,Sales Revenue,566,Income
+2025-03-09,Order #17 Sale,Sales Revenue,656,Income
+2025-03-10,Monthly Software Subscription Expense,Software Subscription,641.07,Expense
+2025-03-12,Order #37 Sale,Sales Revenue,97,Income
+2025-03-12,Order #61 Sale,Sales Revenue,732,Income
+2025-03-17,Order #79 Sale,Sales Revenue,1850,Income
+2025-03-20,Order #3 Sale,Sales Revenue,2056,Income
+2025-03-21,Order #40 Sale,Sales Revenue,108,Income
+2025-03-23,Order #59 Sale,Sales Revenue,4475,Income
+2025-04-05,Monthly Shipping & Logistics Expense,Shipping & Logistics,156.37,Expense
+2025-04-15,Order #51 Sale,Sales Revenue,2316,Income
+2025-04-19,Order #15 Sale,Sales Revenue,1878,Income
+2025-04-22,Order #69 Sale,Sales Revenue,1002,Income
+2025-04-22,Order #77 Sale,Sales Revenue,2178,Income
+2025-04-23,Monthly Office Rent Expense,Office Rent,783.03,Expense
+2025-04-28,Order #22 Sale,Sales Revenue,1056,Income
+2025-04-29,Monthly Software Subscription Expense,Software Subscription,99.27,Expense
+2025-04-30,Order #21 Sale,Sales Revenue,4470,Income
+2025-05-02,Order #25 Sale,Sales Revenue,3600,Income
+2025-05-03,Monthly Software Subscription Expense,Software Subscription,666.53,Expense
+2025-05-03,Monthly Office Rent Expense,Office Rent,854.16,Expense
+2025-05-18,Order #54 Sale,Sales Revenue,1670,Income
+2025-05-24,Order #96 Sale,Sales Revenue,1485,Income
+2025-05-27,Order #26 Sale,Sales Revenue,1132,Income
+2025-05-28,Order #99 Sale,Sales Revenue,919,Income
+2025-06-01,Order #52 Sale,Sales Revenue,418,Income
+2025-06-04,Order #34 Sale,Sales Revenue,1110,Income
+2025-06-08,Order #47 Sale,Sales Revenue,158,Income
+2025-06-09,Order #94 Sale,Sales Revenue,1766,Income
+2025-06-15,Order #73 Sale,Sales Revenue,2289,Income
+2025-06-19,Order #84 Sale,Sales Revenue,360,Income
+2025-06-22,Order #58 Sale,Sales Revenue,1371,Income
+2025-06-24,Monthly Software Subscription Expense,Software Subscription,882.33,Expense
+2025-06-25,Monthly Office Rent Expense,Office Rent,347.57,Expense
+2025-06-26,Order #64 Sale,Sales Revenue,1336,Income
+2025-06-30,Order #82 Sale,Sales Revenue,2090,Income
+2025-07-04,Order #16 Sale,Sales Revenue,1371,Income
+2025-07-07,Order #13 Sale,Sales Revenue,1572,Income
+2025-07-07,Order #62 Sale,Sales Revenue,418,Income
+2025-07-08,Order #80 Sale,Sales Revenue,2790,Income
+2025-07-13,Monthly Office Rent Expense,Office Rent,382.25,Expense
+2025-07-14,Monthly Software Subscription Expense,Software Subscription,167.32,Expense
+2025-07-17,Order #39 Sale,Sales Revenue,158,Income
+2025-07-17,Order #42 Sale,Sales Revenue,245,Income
+2025-07-19,Order #57 Sale,Sales Revenue,2430,Income
+2025-07-20,Order #30 Sale,Sales Revenue,735,Income
+2025-07-22,Order #27 Sale,Sales Revenue,1498,Income
+2025-07-22,Order #76 Sale,Sales Revenue,786,Income
+2025-07-26,Order #35 Sale,Sales Revenue,627,Income
+2025-07-27,Order #31 Sale,Sales Revenue,1360,Income
+2025-07-30,Order #45 Sale,Sales Revenue,2193,Income
+2025-07-31,Order #28 Sale,Sales Revenue,406,Income
+2025-08-05,Order #65 Sale,Sales Revenue,934,Income
+2025-08-06,Order #4 Sale,Sales Revenue,2145,Income
+2025-08-14,Monthly Software Subscription Expense,Software Subscription,68.09,Expense
+2025-08-15,Order #60 Sale,Sales Revenue,1716,Income
+2025-08-20,Monthly Software Subscription Expense,Software Subscription,181.32,Expense
+2025-08-27,Order #23 Sale,Sales Revenue,980,Income
+2025-09-03,Order #14 Sale,Sales Revenue,1885,Income
+2025-09-07,Order #43 Sale,Sales Revenue,1684,Income
+2025-09-11,Order #87 Sale,Sales Revenue,1498,Income
+2025-09-13,Order #91 Sale,Sales Revenue,2076,Income
+2025-09-14,Monthly Marketing Expense,Marketing,676.65,Expense
+2025-09-15,Order #53 Sale,Sales Revenue,419,Income
+2025-09-15,Monthly Marketing Expense,Marketing,354.54,Expense
+2025-09-16,Order #83 Sale,Sales Revenue,600,Income
+2025-09-18,Monthly Office Rent Expense,Office Rent,237.74,Expense
+2025-09-21,Order #1 Sale,Sales Revenue,1824,Income
+2025-09-22,Monthly Marketing Expense,Marketing,1137.92,Expense
+2025-09-23,Order #36 Sale,Sales Revenue,295,Income
+2025-09-23,Monthly Office Rent Expense,Office Rent,1124.03,Expense
+2025-09-24,Order #49 Sale,Sales Revenue,1923,Income
+2025-09-30,Order #29 Sale,Sales Revenue,544,Income
+2025-09-30,Order #56 Sale,Sales Revenue,1356,Income
+2025-10-03,Monthly Shipping & Logistics Expense,Shipping & Logistics,794.51,Expense
+2025-10-13,Order #46 Sale,Sales Revenue,2924,Income
+2025-10-13,Order #50 Sale,Sales Revenue,4670,Income
+2025-10-14,Order #78 Sale,Sales Revenue,3756,Income
+2025-10-16,Order #2 Sale,Sales Revenue,2590,Income
+2025-10-24,Order #5 Sale,Sales Revenue,374,Income
+2025-10-27,Order #81 Sale,Sales Revenue,504,Income
+2025-10-30,Order #38 Sale,Sales Revenue,295,Income
+2025-11-01,Order #90 Sale,Sales Revenue,858,Income
+2025-11-02,Order #97 Sale,Sales Revenue,1766,Income
+2025-11-05,Order #75 Sale,Sales Revenue,2975,Income
+2025-11-15,Order #71 Sale,Sales Revenue,2436,Income
+2025-11-17,Order #9 Sale,Sales Revenue,270,Income
+2025-11-18,Order #11 Sale,Sales Revenue,270,Income
+2025-11-19,Order #70 Sale,Sales Revenue,595,Income
+2025-11-25,Order #6 Sale,Sales Revenue,1524,Income
+2025-12-01,Order #32 Sale,Sales Revenue,1788,Income
+2025-12-02,Order #55 Sale,Sales Revenue,393,Income
+2025-12-02,Monthly Shipping & Logistics Expense,Shipping & Logistics,496.38,Expense
+2025-12-14,Monthly Software Subscription Expense,Software Subscription,219.48,Expense
+2025-12-16,Order #7 Sale,Sales Revenue,1604,Income
+2025-12-19,Order #74 Sale,Sales Revenue,778,Income
+2025-12-22,Order #98 Sale,Sales Revenue,2095,Income
+2025-12-31,Order #8 Sale,Sales Revenue,1929,Income
+2025-12-31,Monthly Office Rent Expense,Office Rent,485.21,Expense

@@ -1,0 +1,7 @@
+Invoice Number: INV-2
+Date: 2026-10-24
+Order ID: 2
+Customer ID: 87
+Product ID: 55
+Quantity: 3
+Total Amount: 1005

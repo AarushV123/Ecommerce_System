@@ -1,0 +1,7 @@
+Invoice Number: INV-53
+Date: 2026-10-24
+Order ID: 53
+Customer ID: 34
+Product ID: 73
+Quantity: 1
+Total Amount: 143
