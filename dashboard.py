@@ -123,7 +123,7 @@ total_stock_value = inv.get_stock_value(products)
 col1, col2, col3, col4, col5 = st.columns(5)
 
 with col1:
-    st.metric("Total Sales", f"₹{total_sales:,.2f}")
+    st.metric("Total Sales", f"${total_sales:,.2f}")
 
 with col2:
     st.metric("Total Orders", total_orders)
@@ -135,7 +135,7 @@ with col4:
     st.metric("Products Sold", total_products)
 
 with col5:
-    st.metric("Stock Value", f"₹{total_stock_value:,.2f}")
+    st.metric("Stock Value", f"${total_stock_value:,.2f}")
 
 
 st.markdown("---")

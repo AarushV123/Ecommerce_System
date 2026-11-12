@@ -4,6 +4,9 @@ from products.product_manager import ProductManager
 from orders.order_manager import OrderManager
 from sales.sales_manager import SalesManager 
 import analytics.sales_analytics as analytics
+from analytics.charts import ChartGenerator
+
+#DJANGO for creating website
 
 def product_menu(product_manager):
     while True:
@@ -115,6 +118,36 @@ def sales_menu(sales_manager):
             print("Invalid Choice")
 
 
+def charts_menu(sales_data):
+    chart_generator = ChartGenerator(sales_data)
+    chart_options = {
+        "1": ("Monthly Sales Trend", chart_generator.plot_monthly_sales_trend),
+        "2": ("Top Products by Revenue", chart_generator.plot_top_products_revenue),
+        "3": ("Category Sales Distribution", chart_generator.plot_category_distribution_pie),
+        "4": ("Top Customers by Spending", chart_generator.plot_customer_spending),
+        "5": ("Best-Selling Products", chart_generator.plot_best_selling_products),
+    }
+
+    while True:
+        print("\n" + "=" * 50)
+        print("SALES CHARTS")
+        print("=" * 50)
+        for choice, (label, _) in chart_options.items():
+            print(f"{choice}. {label}")
+        print("6. Back to Sales Analytics")
+        choice = input("Enter Choice : ")
+
+        if choice in chart_options:
+            _, generate_chart = chart_options[choice]
+            generate_chart()
+        elif choice == "6":
+            break
+        else:
+            print("Invalid Choice")
+
+
+
+
 def sales_analytics():
     loaded_sales_data = None
     while True:
@@ -128,13 +161,14 @@ def sales_analytics():
         print("5. Customer Spending")
         print("6. Productwise Revenue")
         print("7. Category Wise Sales")
-        print("8. Back to Main Menu")
+        print("8. Generate Charts")
+        print("9. Back to Main Menu")
 
         choice = input("Enter Choice : ")
  
         if choice == "1":
             loaded_sales_data = analytics.load_scores_data()
-        elif choice in ["2", "3", "4", "5", "6", "7"]:
+        elif choice in ["2", "3", "4", "5", "6", "7", "8"]:
             if loaded_sales_data is None:
                 print("Please choose Option 1 to Load Data first!")
                 continue
@@ -151,7 +185,9 @@ def sales_analytics():
                 analytics.productwise_revenue(loaded_sales_data)
             elif choice == "7":
                 analytics.category_wise_sales(loaded_sales_data)
-        elif choice == "8":
+            elif choice == "8":
+                charts_menu(loaded_sales_data)
+        elif choice == "9":
             break
         else:
             print("Invalid Choice")

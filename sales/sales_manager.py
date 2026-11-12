@@ -71,7 +71,7 @@ class SalesManager:
                 f"Product ID: {sale.get('productID')}, "
                 f"Quantity: {sale.get('Quantity')}, "
                 f"Date: {sale.get('SaleDate')}, "
-                f"Amount: ₹{sale.get('TotalAmount')}"
+                f"Amount: ${sale.get('TotalAmount')}"
             )
 
     def search_sale(self):
@@ -87,7 +87,7 @@ class SalesManager:
                 print(f"Product ID   : {sale.get('productID')}")
                 print(f"Quantity     : {sale.get('Quantity')}")
                 print(f"Sale Date    : {sale.get('SaleDate')}")
-                print(f"Total Amount : ₹{sale.get('TotalAmount')}")
+                print(f"Total Amount : ${sale.get('TotalAmount')}")
                 return
 
         print("Sale not found.")
@@ -99,4 +99,4 @@ class SalesManager:
             return
 
         total = sum(float(sale.get("TotalAmount", 0)) for sale in sales)
-        print(f"\nTotal Sales = ₹{total:.2f}")
+        print(f"\nTotal Sales = ${total:.2f}")
